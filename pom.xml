@@ -52,7 +52,7 @@
                     <buildArgs>
                         <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
                     </buildArgs>
-                    <!--<dockerConfigFile>src/main/Docker/Dockerfile</dockerConfigFile>-->
+                    <pullNewerImage>false</pullNewerImage>
                 </configuration>
             </plugin>
         </plugins>
