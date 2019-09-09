@@ -1,10 +1,9 @@
 FROM openjdk:8-jdk-alpine
 
-ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \
-    JAVA_OPTS="-Xms2048m -Xmx2048m"
+ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS
 
 # 添加jar到镜像中
-ADD *.jar /app.jar
+ADD ../../../target/*.jar /app.jar
 
 # 设置阿里alpine源、修正镜像时区为东8区、清除缓存
 RUN \
@@ -18,4 +17,4 @@ RUN \
 EXPOSE 8080
 
 # 容器启动后会执行的命令
-ENTRYPOINT [ "java", "${JAVA_OPTS}", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/app.jar" ]
+ENTRYPOINT [ "java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/app.jar" ]

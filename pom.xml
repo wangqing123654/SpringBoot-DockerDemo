@@ -18,7 +18,7 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <docker.image.prefix>test</docker.image.prefix>
+        <docker.image.prefix>hellxz</docker.image.prefix>
     </properties>
 
 
@@ -49,10 +49,8 @@
                 <configuration>
                     <repository>${docker.image.prefix}/${project.artifactId}</repository>
                     <tag>${project.version}</tag>
-                    <buildArgs>
-                        <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
-                    </buildArgs>
                     <pullNewerImage>false</pullNewerImage>
+                    <contextDirectory>src/main/docker</contextDirectory>
                 </configuration>
             </plugin>
         </plugins>
