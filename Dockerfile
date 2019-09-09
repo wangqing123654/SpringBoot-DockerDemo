@@ -4,7 +4,7 @@ ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \
     JAVA_OPTS="-Xms2048m -Xmx2048m"
 
 # 添加jar到镜像中
-ADD *.jar /app.jar
+ADD target/*.jar /app.jar
 
 # 设置阿里alpine源、修正镜像时区为东8区、清除缓存
 RUN \
