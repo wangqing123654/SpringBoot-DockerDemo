@@ -3,7 +3,7 @@ FROM openjdk:8-jdk-alpine
 ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS
 
 # 添加jar到镜像中
-ADD target/*.jar /app.jar
+ADD ./target/*.jar /app.jar
 
 # 设置阿里alpine源、修正镜像时区为东8区、清除缓存
 RUN \
