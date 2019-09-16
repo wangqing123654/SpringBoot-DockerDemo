@@ -12,3 +12,5 @@
 本分支只演示在pom.xml中直接定义构建镜像的步骤  
 
 执行构建命令为`mvn clean package docker:build`
+
+更具体的配置内容请参考<https://github.com/spotify/docker-maven-plugin>
