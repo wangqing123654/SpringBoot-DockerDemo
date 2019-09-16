@@ -48,10 +48,18 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>1.2.0</version>
                 <configuration>
+                    <!--构建的镜像名称-->
                     <imageName>example</imageName>
+                    <!--指定镜像的标签，如果不指定默认为latest，可以同时指定多个-->
+                    <imageTags>
+                        <imageTag>${project.version}</imageTag>
+                        <imageTag>latest</imageTag>
+                    </imageTags>
+                    <!--基础镜像，这里直接使用的java环境的镜像-->
                     <baseImage>java</baseImage>
+                    <!--容器执行入口命令-->
                     <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
-                    <!-- copy the service's jar file from target into the root directory of the image -->
+                    <!-- 从directory目录下复制include的文件到容器内的targetPath目录中 -->
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
@@ -59,6 +67,7 @@
                             <include>${project.build.finalName}.jar</include>
                         </resource>
                     </resources>
+                    <!--这里没有指定推送仓库部分，即只能构建镜像-->
                 </configuration>
             </plugin>
         </plugins>

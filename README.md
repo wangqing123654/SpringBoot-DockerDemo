@@ -9,4 +9,6 @@
 - 可以在pom.xml中直接定义出来要做的操作，构建镜像
 - 还可以在pom.xml中使用指定的Dockerfile来构建镜像
 
-本分支只演示在pom.xml中直接定义构建镜像的步骤
+本分支只演示在pom.xml中直接定义构建镜像的步骤  
+
+执行构建命令为`mvn clean package docker:build`
