@@ -49,7 +49,9 @@
                 <version>1.2.0</version>
                 <configuration>
                     <!--构建的镜像名称-->
-                    <imageName>${docker.image.prefix}/example</imageName>
+                    <imageName>${docker.registry}/${docker.image.prefix}/example</imageName>
+                    <!--如果镜像tags已存在，那么强制覆盖-->
+                    <forceTags>true</forceTags>
                     <!--Dockerfile的目录位置，如果指定了，`baseImage`、 `maintainer`、 `cmd` 和 `entryPoint` 节点会被忽略.-->
                     <dockerDirectory>src/main/docker</dockerDirectory>
                     <!--指定镜像的标签，如果不指定默认为latest，可以同时指定多个-->
@@ -67,7 +69,7 @@
                     </resources>
                     <!--这里没有指定推送仓库部分，即只能构建镜像，推送部分参考如下-->
                     <!--<newName>${docker.registry}/${docker.image.prefix}/example</newName>-->
-                    <registryUrl>${docker.registry}</registryUrl>
+                    <!--<registryUrl>${docker.registry}</registryUrl>-->
                 </configuration>
             </plugin>
         </plugins>
