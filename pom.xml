@@ -20,7 +20,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <docker.image.prefix>hellxz</docker.image.prefix>
-        <docker.registry>10.2.7.70:5000</docker.registry>
     </properties>
 
 
@@ -49,7 +48,7 @@
                 <version>1.2.0</version>
                 <configuration>
                     <!--构建的镜像名称-->
-                    <imageName>${docker.registry}/${docker.image.prefix}/example</imageName>
+                    <imageName>${docker.image.prefix}/example</imageName>
                     <!--如果镜像tags已存在，那么强制覆盖-->
                     <forceTags>true</forceTags>
                     <!--Dockerfile的目录位置，如果指定了，`baseImage`、 `maintainer`、 `cmd` 和 `entryPoint` 节点会被忽略.-->
@@ -67,9 +66,6 @@
                             <include>${project.build.finalName}.jar</include>
                         </resource>
                     </resources>
-                    <!--这里没有指定推送仓库部分，即只能构建镜像，推送部分参考如下-->
-                    <!--<newName>${docker.registry}/${docker.image.prefix}/example</newName>-->
-                    <!--<registryUrl>${docker.registry}</registryUrl>-->
                 </configuration>
             </plugin>
         </plugins>
