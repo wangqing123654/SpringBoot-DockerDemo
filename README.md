@@ -6,3 +6,5 @@
 - dockerfile-maven-plugin  
 
 此分支使用 maven的`dockerfile-maven-plugin`插件，是maven插件中打镜像需要配置最少的一种插件，主要是为了演示与个人测试用
+
+打包使用命令`mvn dockerfile:build`
