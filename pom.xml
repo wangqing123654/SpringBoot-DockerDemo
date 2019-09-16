@@ -20,7 +20,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <docker.image.prefix>hellxz</docker.image.prefix>
-        <docker.registry>10.2.7.70:5000</docker.registry>
+        <docker.registry>http://10.2.7.70:5000</docker.registry>
     </properties>
 
 
@@ -68,6 +68,7 @@
                     </resources>
                     <!--这里没有指定推送仓库部分，即只能构建镜像，推送部分参考如下-->
                     <!--<newName>${docker.registry}/${docker.image.prefix}/example</newName>-->
+                    <registryUrl>${docker.registry}</registryUrl>
                 </configuration>
             </plugin>
         </plugins>
