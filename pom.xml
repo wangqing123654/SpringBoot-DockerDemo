@@ -20,7 +20,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <docker.image.prefix>hellxz</docker.image.prefix>
-        <docker.registry>http://10.2.7.70:5000</docker.registry>
+        <docker.registry>10.2.7.70:5000</docker.registry>
     </properties>
 
 
