@@ -14,7 +14,7 @@ RUN \
     rm -rf /var/cache/apk/*
 
 # 默认暴露的端口号
-EXPOSE 8080
+EXPOSE 8081
 
 # 容器启动后会执行的命令
 ENTRYPOINT [ "java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/app.jar" ]
